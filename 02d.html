@@ -1,0 +1,1295 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://nahoiborraies.github.io/algoritmia/02d.html">
+      
+      
+        <link rel="prev" href="02c.html">
+      
+      
+        <link rel="next" href="02e.html">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Algoritmos matemáticos simples - Algoritmia</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#algoritmos-matematicos-simples" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="index.html" title="Algoritmia" class="md-header__button md-logo" aria-label="Algoritmia" data-md-component="logo">
+      
+  <img src="images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Algoritmia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Algoritmos matemáticos simples
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="grey"  aria-label="Cambiar a modo noche"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo noche" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="grey"  aria-label="Cambiar a modo día"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo día" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Algoritmia" class="md-nav__button md-logo" aria-label="Algoritmia" data-md-component="logo">
+      
+  <img src="images/logo.png" alt="logo">
+
+    </a>
+    Algoritmia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Primeros pasos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Primeros pasos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ¿Qué es la algoritmia?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01b.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lenguajes en 10 minutos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01c.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recursos para aprender
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01d.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Probando Logo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algoritmos básicos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos básicos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02b.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nuestro primer reto "Hola mundo"
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02c.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos con condiciones simples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Algoritmos matemáticos simples
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="02d.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos matemáticos simples
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-losetas-claras-y-oscuras" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Losetas claras y oscuras
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-para-tu-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Para tu información
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-anos-bisiestos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Años bisiestos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mas-retos-para-practicar" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Más retos para practicar
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Más retos para practicar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-tu-amigable-vecino" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. Tu amigable vecino
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-construyendo-piramides" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2. Construyendo pirámides
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-dos-veces-mayor" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3. Dos veces mayor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02e.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos de bucles combinados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02f.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos con tipos simples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algoritmos intermedios
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos intermedios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03b.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos de manipulación de arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03c.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos de manejo avanzado de textos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03d.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mejorar la eficiencia de un algoritmo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03e.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos voraces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algoritmos avanzados
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos avanzados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-losetas-claras-y-oscuras" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Losetas claras y oscuras
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-para-tu-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Para tu información
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-anos-bisiestos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Años bisiestos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mas-retos-para-practicar" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Más retos para practicar
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Más retos para practicar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-tu-amigable-vecino" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. Tu amigable vecino
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-construyendo-piramides" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2. Construyendo pirámides
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-dos-veces-mayor" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3. Dos veces mayor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="algoritmos-matematicos-simples">Algoritmos matemáticos simples<a class="headerlink" href="#algoritmos-matematicos-simples" title="Permanent link">&para;</a></h1>
+<p>En este documento vamos a practicar con algoritmos en los que hay que realizar alguna operación matemática sencilla, como alguna suma, división, cálculo de resto... para poder resolver el problema en cuestión.</p>
+<h2 id="1-losetas-claras-y-oscuras">1. Losetas claras y oscuras<a class="headerlink" href="#1-losetas-claras-y-oscuras" title="Permanent link">&para;</a></h2>
+<p>En <a href="https://aceptaelreto.com/problem/statement.php?id=413" target="_blank">este reto</a> de <em>Acepta el Reto</em> se nos plantea el problema de contar el número de losetas necesarias para cubrir un suelo con un tamaño determinado. </p>
+<p>Comenzaremos el problema leyendo el número de casos de prueba diferentes que tendremos que procesar, y luego, para cada caso de prueba, nos darán dos números: el número de losetas que caben a lo ancho y el número que caben a lo largo de la habitación a cubrir.</p>
+<p>Para cada caso tendremos que indicar cuántas losetas claras y cuántas oscuras van a hacer falta, teniendo en cuenta que queremos que haya el mismo número de ambas o, en el caso de que no sea posible, que haya una loseta más de las claras que de las oscuras.</p>
+<p>Por ejemplo, si la habitación a cubrir mide 5 losetas de ancho y 4 de largo, necesitaremos un total de 20 losetas. Harán falta entonces 10 losetas claras y 10 oscuras. En cambio, si la habitación mide 5 losetas de ancho y 3 de largo, harán falta 15 losetas, y en ese caso usaremos 8 claras y 7 oscuras.</p>
+<p>Lo primero que tendremos que hacer es leer el número de casos de prueba, y con él construir un bucle (<em>for</em>) para procesarlos todos. En cada caso de prueba leeremos el ancho y el alto de la habitación (en número de losetas), y con ello sabremos cuántas losetas harán falta. Si es un número par, dividimos por dos y tendremos las losetas claras y las oscuras. Si es impar, tendremos que sumar una loseta clara más a esa mitad.</p>
+<p>Aquí tenemos cómo resolver el ejercicio con Java:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Reto413</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">casos</span><span class="p">,</span><span class="w"> </span><span class="n">ancho</span><span class="p">,</span><span class="w"> </span><span class="n">alto</span><span class="p">,</span><span class="w"> </span><span class="n">totalBaldosas</span><span class="p">,</span><span class="w"> </span><span class="n">claras</span><span class="p">,</span><span class="w"> </span><span class="n">oscuras</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">casos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">casos</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Leemos el ancho y el alto de cada caso de prueba</span>
+<span class="w">            </span><span class="n">ancho</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="w">            </span><span class="n">alto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="w">            </span><span class="c1">// Calculamos el total de baldosas</span>
+<span class="w">            </span><span class="n">totalBaldosas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ancho</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">alto</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">// La mitad serán claras y la otra mitad oscuras</span>
+<span class="w">            </span><span class="n">claras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">totalBaldosas</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">            </span><span class="n">oscuras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">claras</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">// Si el número de baldosas es impar, habrá una clara más</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">totalBaldosas</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">claras</span><span class="o">++</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">claras</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">oscuras</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Aunque no serían necesarias tantas, hemos declarado variables para cada cosa:</p>
+<ul>
+<li>La variable <code>casos</code> leerá el número de casos de prueba a procesar</li>
+<li>Las variables <code>ancho</code> y <code>largo</code> leerán el ancho y largo de cada caso</li>
+<li>La variable <code>total</code> calcula el total de losetas necesarias (<em>ancho x largo</em>)</li>
+<li>En las variables <code>claras</code> y <code>oscuras</code> almacenamos el número de losetas de cada tipo, para mostrarlo en la respuesta (en ese orden, separadas por un espacio).</li>
+</ul>
+<h2 id="2-para-tu-informacion">2. Para tu información<a class="headerlink" href="#2-para-tu-informacion" title="Permanent link">&para;</a></h2>
+<p>En <a href="https://open.kattis.com/problems/fyi" target="_blank">este reto</a> de <em>Kattis</em> nos plantean cómo detectar el prefijo de un número telefónico para saber a qué centralita tenemos que redirigir la llamada. En concreto, los números (todos ellos de 7 dígitos) que comiencen por 555 serán redirigidos a un operador de información, y el resto no.</p>
+<p>Debemos escribir un programa que lea un número telefónico (se asume y garantiza que será de 7 dígitos) y muestre por pantalla un 1 si empieza por 555 (y hay que redirigirlo al operador de información) o 0 en caso contrario.</p>
+<p>Vamos a plantear el problema usando Python. Leeremos el número entero y, para saber por qué 3 dígitos empieza, lo que haremos será dividir el número entre 10000. Esto quitará los últimos 4 dígitos, y así podremos comprobar cuáles son esos tres primeros. Si coincide con 555 sacaremos un 1 por pantalla, y si es otra cosa sacaremos un 0.</p>
+<p>El código podría quedar así:</p>
+<div class="highlight"><pre><span></span><code><span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">prefijo</span> <span class="o">=</span> <span class="n">numero</span> <span class="o">//</span> <span class="mi">10000</span> <span class="c1"># División entera</span>
+
+<span class="k">if</span> <span class="n">prefijo</span> <span class="o">==</span> <span class="mi">555</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition quote">
+<p class="admonition-title">Ejercicio 1</p>
+<p>Trata de resolver este mismo reto en C# y comprueba que la plataforma lo acepta.</p></p>
+</div>
+<h2 id="3-anos-bisiestos">3. Años bisiestos<a class="headerlink" href="#3-anos-bisiestos" title="Permanent link">&para;</a></h2>
+<p>En <a href="https://www.codewars.com/kata/526c7363236867513f0005ca" target="_blank">este reto</a> de <em>CodeWars</em> nos proponen averiguar si un año almacenado en una variable <code>year</code> es bisiesto o no. Las reglas que nos dicen son las siguientes:</p>
+<ul>
+<li>Si es divisible por 4, es bisiesto</li>
+<li>Si es divisible por 100, no es bisiesto</li>
+<li>Si es divisible por 400, sí es bisiesto</li>
+</ul>
+<p>Es decir, un año como por ejemplo 2024, divisible por 4, es bisiesto. El año 2100 es divisible por 4, pero también lo es por 100, y no lo es por 400, por lo que no es bisiesto. En cambio el año 2400, que es divisible por 400 sí lo es.</p>
+<p>El código para resolver el ejercicio en C# podría quedar así:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Kata</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">IsLeapYear</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">year</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">year</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">year</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<span class="w">            </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">year</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="m">400</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<span class="w">            </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="4-mas-retos-para-practicar">4. Más retos para practicar<a class="headerlink" href="#4-mas-retos-para-practicar" title="Permanent link">&para;</a></h2>
+<p>Agrupamos en este apartado otros retos de características similares para practicar.</p>
+<h3 id="41-tu-amigable-vecino">4.1. Tu amigable vecino<a class="headerlink" href="#41-tu-amigable-vecino" title="Permanent link">&para;</a></h3>
+<p>En <a href="https://aceptaelreto.com/problem/statement.php?id=474" target="_blank">este reto</a> de <em>Acepta el Reto</em> debemos determinar la distancia mínima que debe recorrer SpiderMan para desactivar dos bombas situadas en la Quinta Avenida de Nueva York.</p>
+<p>El problema comienza leyendo el número de casos de prueba que tenemos que procesar. Después, cada caso de prueba consta de 3 números (distancias en metros):</p>
+<ul>
+<li>Posición de Spiderman desde el inicio de la Quinta Avenida</li>
+<li>Posición de la primera bomba (también desde el inicio de la Quinta Avenida)</li>
+<li>Posición de la segunda bomba (también desde el inicio de la Quinta Avenida)</li>
+</ul>
+<p>Tendremos que mostrar por pantalla el total mínimo de metros que tendrá que recorrer SpiderMan para desactivar las dos bombas.</p>
+<p>Por ejemplo: si SpiderMan se encuentra a distancia 100, una bomba a distancia 150 y otra a distancia 200, SpiderMan tendrá que recorrer 50 metros para llegar a la primera bomba y, desde ahí, otros 50 metros para llegar a la segunda bomba: en total, 100 metros.</p>
+<p>En cambio, si SpiderMan está a distancia 300, una bomba a distancia 100 y otra a distancia 700, SpiderMan tendrá que decidir qué bomba desactivar primero. Si elige la bomba 2, recorrerá 400 metros hasta ella (700 menos su posición inicial 300), y luego desde allí tiene otros 600 metros hasta la primera bomba. En total, 100 metros. En cambio, si elige ir primero a por la bomba uno recorre 300 - 100 = 200 metros, y luego los 600 que hay entre las dos bombas. En total, 800 metros. La distancia mínima en este caso sería de 800 metros.</p>
+<p>Como <strong>PISTA</strong> para resolver este reto en Java, puedes usar la instrucción <code>Math.abs</code>, que calcula el valor absoluto de un valor. Si llamamos <code>s</code> a la posición de SpiderMan, <code>a</code> a la posición de la bomba A y <code>b</code> la posición de la bomba <code>b</code>, podemos usar esta función para calcular la distancia de SpiderMan a cualquiera de las dos bombas. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Distancia de SpiderMan a la bomba A</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">distA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">abs</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+</code></pre></div>
+<p>De este modo, da igual si la bomba está antes o después de SpiderMan, la diferencia resultará un número positivo. </p>
+<p>En definitiva, tendremos que decidir qué es mejor:</p>
+<ul>
+<li>Ir primero a por la bomba A y luego a por la B (sumar las dos distancias)</li>
+<li>Ir primero a por la bomba B y luego a por la A (sumar las dos distancias)</li>
+</ul>
+<div class="admonition quote">
+<p class="admonition-title">Ejercicio 2</p>
+<p>Trata de resolver este reto en Java y comprueba que la plataforma lo acepta.</p>
+</div>
+<h3 id="42-construyendo-piramides">4.2. Construyendo pirámides<a class="headerlink" href="#42-construyendo-piramides" title="Permanent link">&para;</a></h3>
+<p>En <a href="https://open.kattis.com/problems/pyramids" target="_blank">este reto</a> de <em>Kattis</em> nos piden que calculemos cuántas alturas de una pirámide podemos construir con un número determinado de bloques.</p>
+<p>Para ello, hay que tener en cuenta que la primera altura (el pico superior) contiene un bloque. La siguiente altura contiene 9 bloques, es decir, 2 bloques más de ancho por cada lado (pasamos de 1x1 a 3x3). La siguiente altura tendrá una malla de 5x5 bloques... y así sucesivamente.</p>
+<div align="center">
+    <img src="https://open.kattis.com/problems/pyramids/file/statement/en/img-0001.png" width="40%">
+    <p><em>Fuente: open.kattis.com</em></p>
+</div>
+
+<p>Así, si tenemos, por ejemplo, 83 bloques, tendremos que tener en cuenta que:</p>
+<ul>
+<li>Gastaremos 1 bloque para el primer nivel</li>
+<li>Gastaremos 9 bloques para el segundo nivel (10 en total)</li>
+<li>Gastaremos 5x5 = 25 bloques para el tercer nivel (35 en total)</li>
+<li>Gastaríamos 7 x 7 = 49 bloques para el cuarto nivel (84 en total), pero no tenemos suficientes. Así que nuestra respuesta en este caso será que podemos hacer 3 alturas.</li>
+</ul>
+<div class="admonition quote">
+<p class="admonition-title">Ejercicio 3</p>
+<p>Trata de resolver este reto en C# y comprueba que la plataforma lo acepta.</p></p>
+</div>
+<h3 id="43-dos-veces-mayor">4.3. Dos veces mayor<a class="headerlink" href="#43-dos-veces-mayor" title="Permanent link">&para;</a></h3>
+<p>En <a href="https://www.codewars.com/kata/5b853229cfde412a470000d0" target="_blank">este reto</a> de <em>CodeWars</em> nos piden calcular cuántos años han pasado o pasarán para que un padre tenga el doble de años que un hijo, dadas sus edades actuales.</p>
+<p>Hay que tener en cuenta que este hecho habrá pasado ya, o pasará, dependiendo de las edades. Por ejemplo, si el padre tiene 45 años y el hijo 30, este hecho pasó hace 15 años, cuando el padre tenía 30 y el hijo 15. En cambio, si el padre tiene 30 años y el hijo tiene 7, el suceso ocurrirá dentro de 16 años, cuando el padre tenga 46 y el hijo 23.</p>
+<p>La estrategia para resolver este reto puede ser la siguiente:</p>
+<ul>
+<li>En primer lugar, vamos restando uno a los años de padre e hijo hasta que, o bien la edad del padre sea el doble que la del hijo, o bien el hijo llegue a 0 años.</li>
+<li>Si no hemos conseguido encontrar la edad doble con el bucle anterior, entonces volvemos a las edades actuales y vamos sumándoles uno a cada edad, hasta que encontremos el doble.</li>
+<li>En ambos casos usaremos un contador de años que nos cuente cuántas veces decrementamos o incrementamos las edades. Ese contador será la respuesta final, en uno u otro caso.</li>
+</ul>
+<div class="admonition quote">
+<p class="admonition-title">Ejercicio 4</p>
+<p>Trata de resolver este reto en Python y comprueba que la plataforma lo acepta</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="02c.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Algoritmos con condiciones simples">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Algoritmos con condiciones simples
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="02e.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Algoritmos de bucles combinados">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Algoritmos de bucles combinados
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+
+  
+
+
+<h4>Consentimiento de cookies</h4>
+<p>Este sitio web utiliza cookies para ofrecerte una mejor experiencia.  Al hacer clic en "Aceptar", aceptas el uso de cookies.  También puedes configurar tus preferencias de cookies si lo prefieres.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Aceptar</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Gestionar cookies</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "navigation.top", "navigation.tracking", "navigation.footer", "navigation.indexes", "content.code.annotate", "announce.dismiss", "toc.follow", "content.code.copy"], "search": "assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>

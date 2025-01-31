@@ -1,0 +1,1360 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://nahoiborraies.github.io/algoritmia/02e.html">
+      
+      
+        <link rel="prev" href="02d.html">
+      
+      
+        <link rel="next" href="02f.html">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Algoritmos de bucles combinados - Algoritmia</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#algoritmos-de-bucles-combinados" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="index.html" title="Algoritmia" class="md-header__button md-logo" aria-label="Algoritmia" data-md-component="logo">
+      
+  <img src="images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Algoritmia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Algoritmos de bucles combinados
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="grey"  aria-label="Cambiar a modo noche"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo noche" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="grey"  aria-label="Cambiar a modo día"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo día" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Algoritmia" class="md-nav__button md-logo" aria-label="Algoritmia" data-md-component="logo">
+      
+  <img src="images/logo.png" alt="logo">
+
+    </a>
+    Algoritmia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Primeros pasos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Primeros pasos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ¿Qué es la algoritmia?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01b.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lenguajes en 10 minutos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01c.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recursos para aprender
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01d.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Probando Logo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algoritmos básicos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos básicos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02b.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nuestro primer reto "Hola mundo"
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02c.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos con condiciones simples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02d.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos matemáticos simples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Algoritmos de bucles combinados
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="02e.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos de bucles combinados
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-los-saltos-de-mario" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Los saltos de Mario
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-a-dibujar-hexagonos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. A dibujar hexágonos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-mas-retos-para-practicar" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Más retos para practicar
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Más retos para practicar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-galibo" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Gálibo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-distribucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Distribución
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-la-media-prometida" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3. La media prometida
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02f.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos con tipos simples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algoritmos intermedios
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos intermedios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03b.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos de manipulación de arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03c.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos de manejo avanzado de textos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03d.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mejorar la eficiencia de un algoritmo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03e.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos voraces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algoritmos avanzados
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos avanzados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-los-saltos-de-mario" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Los saltos de Mario
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-a-dibujar-hexagonos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. A dibujar hexágonos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-mas-retos-para-practicar" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Más retos para practicar
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Más retos para practicar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-galibo" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Gálibo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-distribucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Distribución
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-la-media-prometida" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3. La media prometida
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="algoritmos-de-bucles-combinados">Algoritmos de bucles combinados<a class="headerlink" href="#algoritmos-de-bucles-combinados" title="Permanent link">&para;</a></h1>
+<p>En este documento veremos retos donde, para resolver el problema, tendremos que hacer uso de varios bucles enlazados o anidados. Los usaremos bien para procesar los datos de entrada, bien para analizarlos del modo correcto según el problema. </p>
+<h2 id="1-los-saltos-de-mario">1. Los saltos de Mario<a class="headerlink" href="#1-los-saltos-de-mario" title="Permanent link">&para;</a></h2>
+<p>Comenzaremos con <a href="https://aceptaelreto.com/problem/statement.php?id=158" target="_blank">este reto</a> de <em>Acepta el Reto</em>. En él nos van a dar varias secuencias de saltos de Mario, y tenemos que averiguar cuántos saltos ha dado hacia arriba (es decir, a una plataforma a una altura mayor de la que está ahora) y hacia abajo (a plataformas por debajo de su nivel).</p>
+<p>Al principio leeremos el total de casos de prueba que tenemos que examinar. Esto nos proporcionará el primer bucle (para recorrer todos los casos de prueba). Cada caso de prueba está formado por dos cosas:</p>
+<ul>
+<li>El número de muros entre los que hay que saltar</li>
+<li>Las alturas de cada uno de esos muros. Aquí vendrá el segundo bucle (dentro del anterior), para leer cada altura de cada uno de los muros.</li>
+</ul>
+<p>Iremos procesando cada altura de cada muro y comparándola con la del muro anterior (menos la primera, que es desde donde empieza Mario). Si es mayor que la anterior contaremos un salto ascendente, y si es menor contaremos un salto descendente. </p>
+<p>Como resultado debemos mostrar el número de saltos ascendentes y descendentes, separados por un espacio.</p>
+<p>Por ejemplo, imaginemos un caso de prueba en el que nos dan 8 muros con estas alturas:</p>
+<div class="highlight"><pre><span></span><code>1 4 2 2 3 5 3 4
+</code></pre></div>
+<ul>
+<li>Al pasar del muro de altura 1 al muro de altura 4, se tiene un salto ascendente. </li>
+<li>Al pasar de éste al muro de altura 2 tenemos un salto descendente</li>
+<li>Pasamos a otro muro de altura 2: ni ascendente ni descendente</li>
+<li>Saltamos a un muro de altura 3. Otro salto ascendente (2)</li>
+<li>Pasamos a un muro de altura 5. Otro salto ascendente (3)</li>
+<li>Bajamos a un muro de altura 3. Contamos salto descendente (2)</li>
+<li>Finalmente, pasamos a un muro de altura 4, y nuevo salto ascendente (4)</li>
+</ul>
+<p>Tenemos en total 4 saltos ascendentes y 2 descendentes. Mostraremos como resultado:</p>
+<div class="highlight"><pre><span></span><code>4 2
+</code></pre></div>
+<p>Aquí vemos cómo resolver el problema en Java:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Reto158</span>
+<span class="p">{</span><span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">casos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">muros</span><span class="p">,</span><span class="w"> </span><span class="n">arriba</span><span class="p">,</span><span class="w"> </span><span class="n">abajo</span><span class="p">,</span><span class="w"> </span><span class="n">previo</span><span class="p">,</span><span class="w"> </span><span class="n">actual</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Procesamos cada caso de prueba</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">casos</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Leemos la cantidad de muros</span>
+<span class="w">            </span><span class="n">muros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="w">            </span><span class="c1">// Aún no hemos hecho ningún salto desde un muro previo</span>
+<span class="w">            </span><span class="c1">// en esta tanda</span>
+<span class="w">            </span><span class="n">previo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">// Contadores de saltos ascendentes y descendentes</span>
+<span class="w">            </span><span class="n">arriba</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">abajo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">// Segundo bucle: leemos los muros de este caso</span>
+<span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">muros</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">actual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="w">                </span><span class="c1">// Miramos si venimos de una torre previa</span>
+<span class="w">                </span><span class="c1">// y si es un salto arriba o abajo</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">previo</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">actual</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">previo</span><span class="p">)</span>
+<span class="w">                    </span><span class="n">arriba</span><span class="o">++</span><span class="p">;</span>
+<span class="w">                </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">previo</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">actual</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">previo</span><span class="p">)</span>
+<span class="w">                    </span><span class="n">abajo</span><span class="o">++</span><span class="p">;</span>
+<span class="w">                </span><span class="n">previo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actual</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">arriba</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">abajo</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w">  </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="2-a-dibujar-hexagonos">2. A dibujar hexágonos<a class="headerlink" href="#2-a-dibujar-hexagonos" title="Permanent link">&para;</a></h2>
+<p>En <a href="https://aceptaelreto.com/problem/statement.php?id=150" target="_blank">este reto</a> de <em>Acepta el Reto</em> debemos dibujar hexágonos regulares (polígonos de 6 lados de igual tamaño) rellenos con el símbolo que se indique. </p>
+<p>Para cada caso de prueba leeremos la longitud del lado y el carácter de relleno. Finalizaremos el proceso cuando leamos longitud 0 y carácter de relleno 0.</p>
+<p>Plantearemos entonces cómo dibujar un hexágono. Observemos este hexágono de lado 4, relleno de símbolos de asterisco:</p>
+<div class="highlight"><pre><span></span><code>   ****
+  ******
+ ********
+**********
+ ********
+  ******
+   ****
+</code></pre></div>
+<p>Tendremos que dibujar el hexágono por líneas, y el truco está en ver cómo aumentan o disminuyen los símbolos y los espacios en blanco iniciales en cada línea. Para un hexágono de lado 4:</p>
+<ul>
+<li>La primera línea tiene 3 espacios y 4 símbolos (es decir, un espacio menos que símbolos)</li>
+<li>La segunda línea tiene un espacio menos (dos) y 2 símbolos más (seis)</li>
+<li>La tercera línea también tiene un espacio menos (uno) y 2 símbolos más (ocho)</li>
+<li>La cuarta línea (con la que terminamos el lado diagonal), también tiene un espacio menos (cero) y dos símbolos más (10).</li>
+</ul>
+<p>Una vez hemos alcanzado tantas repeticiones como el lado del hexágono, comienza el dibujado de la mitad inferior, en el que vamos al revés: cada línea que bajemos tendrá un espacio más y dos símbolos menos que la anterior, hasta terminar en una línea con tantos símbolos como el lado del hexágono.</p>
+<p>Formaremos un bucle <code>for</code> formado por dos secciones: una para dibujar la mitad superior con las primeras N iteraciones (siendo N el lado del hexágono), y otro para dibujar la mitad inferior con las N-1 últimas iteraciones (ya que el segmento central es compartido por las dos mitades y ya lo hemos dibujado).</p>
+<p>Dentro de cada bucle iremos incrementando o decrementando los contadores de espacios y símbolos según el patrón que hemos indicado anteriormente. Al finalizar cada uno de estos bucles haremos un salto de línea para pasar a la siguiente iteración.</p>
+<p>Así podría quedar el código en Java:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RetoHexagonos</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">lado</span><span class="p">,</span><span class="w"> </span><span class="n">filas</span><span class="p">,</span><span class="w"> </span><span class="n">espacios</span><span class="p">,</span><span class="w"> </span><span class="n">simbolos</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">char</span><span class="w"> </span><span class="n">simbolo</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Repetimos el dibujado hasta que nos den un lado igual a 0</span>
+<span class="w">        </span><span class="k">do</span>
+<span class="w">        </span><span class="p">{</span><span class="w">        </span>
+<span class="w">            </span><span class="n">lado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="w">            </span><span class="c1">// El símbolo queda junto al lado, separado por un espacio</span>
+<span class="w">            </span><span class="c1">// Leemos lo que queda de línea, limpiamos espacios con &quot;trim&quot; y</span>
+<span class="w">            </span><span class="c1">// nos quedamos con el único símbolo que queda (charAt(0))</span>
+<span class="w">            </span><span class="n">simbolo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">().</span><span class="na">trim</span><span class="p">().</span><span class="na">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">lado</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// Tendremos tantas filas que dibujar como 2 veces el tamaño</span>
+<span class="w">                </span><span class="c1">// del lado (menos uno, porque el vértice es compartido por</span>
+<span class="w">                </span><span class="c1">// dos lados)</span>
+<span class="w">                </span><span class="n">filas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">lado</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">                </span><span class="c1">// El número de espacios para la primera fila es igual al </span>
+<span class="w">                </span><span class="c1">// tamaño del lado menos uno</span>
+<span class="w">                </span><span class="n">espacios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lado</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">                </span><span class="c1">// El número de símbolos de la primera fila es el tamaño del</span>
+<span class="w">                </span><span class="c1">// lado</span>
+<span class="w">                </span><span class="n">simbolos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lado</span><span class="p">;</span>
+
+<span class="w">                </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">filas</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="c1">// Dibujamos los espacios que tocan en esa fila</span>
+<span class="w">                    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">espacios</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                    </span><span class="c1">// Luego dibujamos los símbolos que tocan</span>
+<span class="w">                    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">simbolos</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">simbolo</span><span class="p">);</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+<span class="w">                    </span><span class="c1">// En la primera mitad del dibujo, los espacios bajan</span>
+<span class="w">                    </span><span class="c1">// de uno en uno y los símbolos suben de dos en dos</span>
+<span class="w">                    </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">lado</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">espacios</span><span class="o">--</span><span class="p">;</span>
+<span class="w">                        </span><span class="n">simbolos</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                    </span><span class="c1">// En la segunda mitad del dibujo es al revés: </span>
+<span class="w">                    </span><span class="c1">// los espacios suben de uno en uno y los símbolos bajan</span>
+<span class="w">                    </span><span class="c1">// de dos en dos</span>
+<span class="w">                    </span><span class="k">else</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">espacios</span><span class="o">++</span><span class="p">;</span>
+<span class="w">                        </span><span class="n">simbolos</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">lado</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Observa cómo la lectura del lado y el símbolo se complica un poco en Java: al estar los dos datos en la misma línea, primero leemos el lado con <code>sc.nextInt()</code>, luego leemos lo que queda de línea con <code>sc.nextLine()</code> y tenemos que quitar los espacios que haya con <code>trim()</code> y quedarnos con el primer (y único) símbolo que queda, usando <code>charAt(0)</code>.</p>
+<h2 id="3-mas-retos-para-practicar">3. Más retos para practicar<a class="headerlink" href="#3-mas-retos-para-practicar" title="Permanent link">&para;</a></h2>
+<p>Agrupamos en este apartado otros retos de características similares para practicar.</p>
+<h3 id="31-galibo">3.1. Gálibo<a class="headerlink" href="#31-galibo" title="Permanent link">&para;</a></h3>
+<p>En <a href="https://aceptaelreto.com/problem/statement.php?id=664" target="_blank">este reto</a> de <em>Acepta el Reto</em> debemos calcular la altura máxima que puede tener un camión para pasar por una serie de puentes.</p>
+<p>Cada caso de prueba que nos dan está compuesto por estos datos:</p>
+<ul>
+<li>Primero nos dirán cuántos puentes tiene que atravesar el camión</li>
+<li>Para cada puente leeremos en una línea separada sus datos: cuántos carriles hay en la autovía, y la altura que tiene cada carril al pasar bajo el puente</li>
+<li>El problema termina cuando leamos 0 puentes como primer dato del caso de prueba</li>
+</ul>
+<p>Como resultado tendremos que mostrar la altura máxima que puede tener el camión para poder pasar por debajo de cada puente (eligiendo el carril apropiado).</p>
+<p>Veamos algunas pistas para resolver este problema:</p>
+<ul>
+<li>Una vez leamos el número de puentes, construiremos un bucle para procesar cada puente</li>
+<li>Dentro de este bucle, tendremos que leer el número de carriles, y con ello construiremos un segundo bucle (anidado) para leer la altura de cada carril</li>
+<li>De cada puente nos interesa quedarnos con el carril que tenga más altura (por ahí pasará el camión)</li>
+<li>Por otra parte, de todos los puentes que examinemos nos tendremos que quedar con la altura seleccionada que sea menor (ya que ésa será la que condicione si el camión puede pasar por todos los puentes o no)</li>
+</ul>
+<p>Veamos el siguiente caso de prueba:</p>
+<div class="highlight"><pre><span></span><code>2
+3 300 300 250
+2 325 200
+</code></pre></div>
+<p>Nos dicen que hay dos puentes:</p>
+<ul>
+<li>El primero de ellos tiene 3 carriles con alturas 300, 300 y 250. Elegiremos cualquiera de los carriles de 300 (altura máxima para poder pasar)</li>
+<li>El segundo puente tiene 2 carriles de alturas 325 y 200. Elegiremos el carril de 325 para poder pasar</li>
+<li>De las alturas de los dos puentes, la más pequeña por la que pasaremos es la de 300, por lo que nuestra altura máxima de camión tendrá que ser de 300</li>
+<li>AYUDA: Cada vez que termines de procesar un puente y escoger su altura máxima, compárala con la altura máxima que lleves hasta ahora y, si es menor, quédate con la menor.</li>
+</ul>
+<div class="admonition quote">
+<p class="admonition-title">Ejercicio 1</p>
+<p>Trata de resolver este reto en Java y comprueba que la plataforma lo acepta</p>
+</div>
+<h3 id="32-distribucion">3.2. Distribución<a class="headerlink" href="#32-distribucion" title="Permanent link">&para;</a></h3>
+<p>En <a href="https://open.kattis.com/problems/upprodun" target="_blank">este reto</a> de <em>Kattis</em> tenemos que distribuir a los equipos de una competición de programación en salas. Nos darán como entrada el número N de salas y el número M de equipos. Hay que tener en cuenta que todas las salas son de un tamaño similar, y el objetivo es distribuir los equipos de forma equitativa entre las salas.</p>
+<p>La salida tendrá que contener N líneas (una por cada sala). En cada línea dibujaremos un asterisco <code>*</code> por cada equipo que esté ubicado en esa sala.</p>
+<p>Veamos algunos ejemplos que indica el enunciado:</p>
+<ul>
+<li>Si nos dan N = 1 salas y M = 5 equipos, evidentemente debemos colocar los 5 equipos en la única sala disponible. La salida del problema será la siguiente:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>*****
+</code></pre></div>
+<ul>
+<li>Si nos dan N = 3 salas y M = 8 equipos, hay que distribuir los equipos de forma equitativa. El propio reto dice que se admiten distintas soluciones equivalentes. En este caso, al haber 3 salas cada sala tendrá 2 equipos, y dos de ellas añadirán un equipo más para completar los 8 que hay. Aquí vemos algunas posibles soluciones (en columnas independientes, bastaría con mostrar una de ellas):</li>
+</ul>
+<div class="highlight"><pre><span></span><code>**       ***      ***
+***      **       ***
+***      ***      **
+</code></pre></div>
+<p>Explicamos algunas pistas para resolver el reto:</p>
+<ul>
+<li>Como podrás deducir el número de equipos que va a cada sala es el cociente (entero) entre el número de equipos y el número de salas. En el ejemplo anterior 8 equipos repartidos entre 3 salas = 2 equipos por sala.</li>
+<li>El resto de equipos que no han cabido en la división entera (2 equipos en el ejemplo anterior), se van añadiendo uno por sala, hasta que ya no queden.</li>
+</ul>
+<div class="admonition quote">
+<p class="admonition-title">Ejercicio 2</p>
+<p>Trata de resolver este reto en C# o Python y comprueba que la plataforma lo acepta</p>
+</div>
+<h3 id="33-la-media-prometida">3.3. La media prometida<a class="headerlink" href="#33-la-media-prometida" title="Permanent link">&para;</a></h3>
+<p>En <a href="https://aceptaelreto.com/problem/statement.php?id=622" target="_blank">este reto</a> de <em>Acepta el Reto</em> debemos ayudar a una alumna a saber qué nota sacar en su último examen para obtener la nota media (exacta) que quiere sacar.</p>
+<p>Para cada caso de prueba, primero nos dirán cuántos exámenes ha hecho la alumna, y luego leeremos en la segunda línea las notas que ha sacado en esos exámenes. Finalmente, en la tercera línea leeremos la media que quiere sacar. A partir de aquí tendremos que averiguar qué tiene que sacar en su último examen para conseguir esa media y, si no es posible, mostraremos por pantalla "IMPOSIBLE".</p>
+<p>Veamos algunos ejemplos:</p>
+<ul>
+<li>La alumna ha hecho 3 exámenes, en los que ha sacado 6, 6 y 6. Y ella quiere sacar de media un 6. Evidentemente, en su último examen tendrá que volver a sacar un 6 para obtener esa media.</li>
+<li>Si ha hecho 2 exámenes con notas de 10 y 10, y ella quiere sacar un 7, tendrá que sacar un 1 en su último examen para que la media de notas (10 + 10 + 1) / 3 dé 7.</li>
+<li>Si ha hecho 3 exámenes con notas de 6, 6 y 7 y quiere sacar de media un 8, le diremos que es IMPOSIBLE, porque para sacar una media de 8 con 4 exámenes la suma de los 4 tendría que dar 32 (para que, al dividir entre 4 salga 8). Pero 6 + 6 + 7 = 19. Tendría que sacar un 13 en el último examen para llegar a 32, y eso es imposible.</li>
+</ul>
+<div class="admonition quote">
+<p class="admonition-title">Ejercicio 3</p>
+<p>Trata de resolver este reto en Java y comprueba que la plataforma lo acepta</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="02d.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Algoritmos matemáticos simples">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Algoritmos matemáticos simples
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="02f.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Algoritmos con tipos simples">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Algoritmos con tipos simples
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+
+  
+
+
+<h4>Consentimiento de cookies</h4>
+<p>Este sitio web utiliza cookies para ofrecerte una mejor experiencia.  Al hacer clic en "Aceptar", aceptas el uso de cookies.  También puedes configurar tus preferencias de cookies si lo prefieres.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Aceptar</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Gestionar cookies</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "navigation.top", "navigation.tracking", "navigation.footer", "navigation.indexes", "content.code.annotate", "announce.dismiss", "toc.follow", "content.code.copy"], "search": "assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>
