@@ -37,6 +37,7 @@ nav:
     - Algoritmos voraces: 03e.md
   - Algoritmos avanzados:
     - Introducción: 04a.md
+    - Manejo de colecciones de objetos: 04b.md
 
 # Tema CSS
 theme:

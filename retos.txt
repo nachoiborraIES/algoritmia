@@ -164,11 +164,17 @@ Específicos de textos:
 03.02. Problemas con objetos complejos
 --------------------------------------
 
-( ) Acepta el Reto: 268 - Desarrollos en las bicicletas (https://aceptaelreto.com/problem/statement.php?id=268)
+Listas:
+(*) Acepta el Reto: 268 - Desarrollos en las bicicletas (https://aceptaelreto.com/problem/statement.php?id=268)
 ( ) Acepta el Reto: 351 - Unidad Curiosa de Monitorización (https://aceptaelreto.com/problem/statement.php?id=351)
-( ) Acepta el Reto: 366 - Los niños buenos (https://aceptaelreto.com/problem/statement.php?id=366)
+(+) Acepta el Reto: 366 - Los niños buenos (https://aceptaelreto.com/problem/statement.php?id=366)
 ( ) Acepta el Reto: 109 - Liga de pádel (https://aceptaelreto.com/problem/statement.php?id=109)
 (C) Acepta el Reto: 477 - A la captura del Doctor Muerte (https://aceptaelreto.com/problem/statement.php?id=477)
+
+Diccionarios:
+( ) Acepta el Reto: 106 - Códigos de barras (https://aceptaelreto.com/problem/statement.php?id=106)
+(+) Acepta el Reto: 637 - El telegrama más corto (https://aceptaelreto.com/problem/statement.php?id=637)
+( ) Acepta el Reto: 765 - Ninots indultados (https://aceptaelreto.com/problem/statement.php?id=765)
 
 03.03. Problemas de búsqueda de soluciones
 ------------------------------------------
