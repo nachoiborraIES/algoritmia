@@ -1,0 +1,1354 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://nahoiborraies.github.io/algoritmia/04b.html">
+      
+      
+        <link rel="prev" href="04a.html">
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Manejo de colecciones de objetos - Algoritmia</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#manejo-de-colecciones-de-objetos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="index.html" title="Algoritmia" class="md-header__button md-logo" aria-label="Algoritmia" data-md-component="logo">
+      
+  <img src="images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Algoritmia
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Manejo de colecciones de objetos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="grey"  aria-label="Cambiar a modo noche"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo noche" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="grey"  aria-label="Cambiar a modo día"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo día" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Algoritmia" class="md-nav__button md-logo" aria-label="Algoritmia" data-md-component="logo">
+      
+  <img src="images/logo.png" alt="logo">
+
+    </a>
+    Algoritmia
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Primeros pasos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Primeros pasos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ¿Qué es la algoritmia?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01b.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lenguajes en 10 minutos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01c.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recursos para aprender
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01d.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Probando Logo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algoritmos básicos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos básicos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02b.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nuestro primer reto "Hola mundo"
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02c.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos con condiciones simples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02d.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos matemáticos simples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02e.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos de bucles combinados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02f.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos con tipos simples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algoritmos intermedios
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos intermedios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03b.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos de manipulación de arrays
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03c.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos de manejo avanzado de textos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03d.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mejorar la eficiencia de un algoritmo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03e.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos voraces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algoritmos avanzados
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos avanzados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Manejo de colecciones de objetos
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="04b.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Manejo de colecciones de objetos
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ordenando-listas-de-objetos-los-ninos-buenos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Ordenando listas de objetos: los niños buenos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Ordenando listas de objetos: los niños buenos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-desarrollos-en-las-bicicletas" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. Desarrollos en las bicicletas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-uso-de-diccionarios-el-telegrama-mas-corto" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Uso de diccionarios: el telegrama más corto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Uso de diccionarios: el telegrama más corto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#22-ninots-indultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Ninots indultados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ordenando-listas-de-objetos-los-ninos-buenos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Ordenando listas de objetos: los niños buenos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Ordenando listas de objetos: los niños buenos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-desarrollos-en-las-bicicletas" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. Desarrollos en las bicicletas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-uso-de-diccionarios-el-telegrama-mas-corto" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Uso de diccionarios: el telegrama más corto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Uso de diccionarios: el telegrama más corto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#22-ninots-indultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Ninots indultados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="manejo-de-colecciones-de-objetos">Manejo de colecciones de objetos<a class="headerlink" href="#manejo-de-colecciones-de-objetos" title="Permanent link">&para;</a></h1>
+<p>Vamos a ver a continuación algunos ejemplos de retos donde es necesario (o recomendable) almacenar la información de forma más compleja, empleando clases y objetos ya que hay varios datos que tratar de cada individuo del problema. También, en algunos de estos casos, será necesario ordenar la colección de datos siguiendo algún criterio para resolver el problema.</p>
+<h2 id="1-ordenando-listas-de-objetos-los-ninos-buenos">1. Ordenando listas de objetos: los niños buenos<a class="headerlink" href="#1-ordenando-listas-de-objetos-los-ninos-buenos" title="Permanent link">&para;</a></h2>
+<p>En <a href="https://aceptaelreto.com/problem/statement.php?id=366" target="_blank">este reto</a> de <em>Acepta el Reto</em> nos plantean que resolvamos cómo va a repartir Papá Noel los regalos a los niños. De cada niño tenemos dos datos: cómo de bien se ha portado (número entre 1 y 100) y cuánto pesan los regalos que ha pedido (número entre 1 y 1000). Papá Noel quiere repartir primero los regalos a los niños que mejor se han portado y, si dos niños se han portado igual, quiere repartir primero los regalos que pesen menos.</p>
+<p>Cada caso de prueba vendrá iniciado por un número <em>n</em>, que indica a cuántos niños hay que repartir regalos. Luego vienen los datos de cada niño en una línea; de cada uno guardaremos dos datos: cómo de bueno ha sido y cuánto pesan los regalos que ha pedido. Deberemos mostrar por pantalla los datos ordenados de los niños, en el orden en que Papá Noel repartirá los regalos.</p>
+<p>Por ejemplo, si tenemos este caso de entrada:</p>
+<div class="highlight"><pre><span></span><code>3
+80 2
+100 12
+100 1
+</code></pre></div>
+<p>Tendremos que procesar en total 3 niños. Primero se repartirán los regalos a los niños que se han portado 100 de bien y, ante esto, se elegirá primero al que sus regalos pesan 1, y luego al que pesan 12. Se deja en tercer lugar al niño que se ha portado 80 de bien. Así, la salida para este caso debería ser:</p>
+<div class="highlight"><pre><span></span><code>100 1
+100 12
+80 2
+</code></pre></div>
+<p>Para empezar, crearemos una clase <code>Nino</code> que almacenará como atributos los datos de cada niño: cómo de bueno ha sido (atributo <code>bueno</code>) y cuánto pesan sus regalos (atributo <code>peso</code>). En el constructor asignamos las dos cosas, y hacemos que la clase implemente la interfaz <code>Comparable&lt;Nino&gt;</code> para poder comparar dos niños entre sí. Lo que haremos será comparar el atributo <code>bueno</code> de mayor a menor y, si son iguales, entonces comparamos el atributo <code>peso</code> de menor a mayor. Añadimos también un método <code>toString</code> para sacar la información del niño con el formato que pide el problema (<code>bueno</code> y <code>peso</code> separados por un espacio). Así quedaría esta clase:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">Nino</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Comparable</span><span class="o">&lt;</span><span class="n">Nino</span><span class="o">&gt;</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">bueno</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">peso</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Nino</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">bueno</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">peso</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">bueno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bueno</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">peso</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">peso</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compareTo</span><span class="p">(</span><span class="n">Nino</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Comparamos &quot;bueno&quot; de mayor a menor</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="n">n</span><span class="p">.</span><span class="na">bueno</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">bueno</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Si coincide, comparamos &quot;peso&quot; de menor a mayor</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">resultado</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">peso</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">.</span><span class="na">peso</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">resultado</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">bueno</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">peso</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Ahora que ya tenemos esta clase, podemos construir un programa principal que lea cada caso de prueba, construya una lista de objetos <code>Nino</code> con los datos que vaya leyendo de cada línea, la ordene según el criterio que hemos definido en la propia clase y la saque por pantalla:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Reto366</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="w">        </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Nino</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lista</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">do</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Leemos el número de niños</span>
+<span class="w">            </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// Almacenamos los niños en una lista</span>
+<span class="w">                </span><span class="n">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Nino</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">                </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">lista</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Nino</span><span class="p">(</span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(),</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">()));</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="c1">// Ordenamos por el criterio de la clase Nino</span>
+<span class="w">                </span><span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">lista</span><span class="p">);</span>
+<span class="w">                </span><span class="k">for</span><span class="p">(</span><span class="n">Nino</span><span class="w"> </span><span class="n">nino</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">lista</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nino</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="c1">// Debemos sacar una línea en blanco al final de cada caso</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="11-desarrollos-en-las-bicicletas">1.1. Desarrollos en las bicicletas<a class="headerlink" href="#11-desarrollos-en-las-bicicletas" title="Permanent link">&para;</a></h3>
+<p>En <a href="https://aceptaelreto.com/problem/statement.php?id=366" target="_blank">este reto</a> de <em>Acepta el Reto</em> debemos hacer algo parecido con los desarrollos de las bicicletas que nos plantean. Cada caso de prueba consta de tres líneas:</p>
+<ul>
+<li>En la primera línea nos dicen cuántos platos <em>p</em> y cuántas coronas <em>c</em> tiene la bicicleta en cuestión</li>
+<li>En la segunda línea nos dan los tamaños de los platos, separados por espacios</li>
+<li>En la tercera línea nos dan los tamaños de las coronas, separados por espacios</li>
+</ul>
+<p>La idea es crear una clase <code>Desarrollo</code> que almacene una combinación de tamaño de plato y corona, y en el programa principal una lista de desarrollos que comprueba todas las combinaciones de platos y coronas que se puede tener con la bicicleta, y las ordene de menor a mayor desarrollo (es decir, de menor a mayor relación entre tamaño de plato y de corona).</p>
+<p>Por ejemplo, para este caso de prueba:</p>
+<div class="highlight"><pre><span></span><code>2 3
+34 48
+20 26 34
+</code></pre></div>
+<p>Tenemos 2 platos de tamaño 34 y 48, y 3 coronas de tamaño 20, 26 y 34. Con esto salen 6 posibles combinaciones:</p>
+<ul>
+<li>Plato 34, Corona 20</li>
+<li>Plato 34, Corona 26</li>
+<li>Plato 34, Corona 34</li>
+<li>Plato 48, Corona 20</li>
+<li>Plato 48, Corona 26</li>
+<li>Plato 48, Corona 34</li>
+</ul>
+<p>La combinación que menos desarrollo tiene es la primera (34 / 34), y la que más tiene es la cuarta (48 / 20). Ordenadas de menor a mayor con el formato que pide el ejercicio (mostrando plato y corona separados por un guión, todos en una línea separados por espacios) quedaría así:</p>
+<div class="highlight"><pre><span></span><code>34-34 34-26 48-34 34-20 48-26 48-20
+</code></pre></div>
+<div class="admonition quote">
+<p class="admonition-title">Ejercicio 1</p>
+<p>Trata de resolver este reto en Java y comprueba que la plataforma lo acepta.</p>
+</div>
+<h2 id="2-uso-de-diccionarios-el-telegrama-mas-corto">2. Uso de diccionarios: el telegrama más corto<a class="headerlink" href="#2-uso-de-diccionarios-el-telegrama-mas-corto" title="Permanent link">&para;</a></h2>
+<p>Vamos a practicar cómo emplear diccionarios o mapas en retos con <a href="https://aceptaelreto.com/problem/statement.php?id=637" target="_blank">este reto</a> de <em>Acepta el Reto</em>. En él nos dan al principio una tabla de cómo se codifican los distintos símbolos en código Morse, empleando puntos y rayas. Debemos procesar una serie de casos de pruebas, cada uno formado por un texto, y debemos indicar cuál es la duración en puntos totales del telegrama transcrito a Morse. Para ello se deben tener en cuenta las siguientes premisas:</p>
+<ul>
+<li>Cada raya que se emita equivale a 3 puntos</li>
+<li>Entre cada símbolo (punto o raya) de una misma letra hay que esperar 1 punto</li>
+<li>Entre cada letra o símbolo del mensaje hay que esperar 3 puntos</li>
+<li>Entre cada palabra (es decir, cada espacio en blanco que nos encontremos) hay que esperar 5 puntos</li>
+</ul>
+<p>Así, por ejemplo: </p>
+<ul>
+<li>Para el mensaje "?", cuyo código Morse es <code>..--..</code>, tendremos en total:<ul>
+<li>1 + 1 + 3 + 3 + 1 + 1 = 10 puntos de los puntos y rayas del mensaje</li>
+<li>5 puntos, uno por la separación entre cada uno de los 6 símbolos anteriores</li>
+<li>Total: 15 puntos</li>
+</ul>
+</li>
+<li>Para el mensaje "YA NACIO" tendremos el siguiente cómputo</li>
+<li>Y = <code>-.--</code> = 10 puntos + 3 de separación = 13 puntos</li>
+<li>A = <code>.-</code> = 4 puntos + 1 de separación = 5 puntos</li>
+<li>(espacio en blanco) = 5 puntos</li>
+<li>N = <code>-.</code> = 4 puntos + 1 de separación = 5 puntos</li>
+<li>A = <code>.-</code> = 4 puntos + 1 de separación = 5 puntos</li>
+<li>C = <code>-.-.</code> = 8 puntos + 3 de separación = 11 puntos</li>
+<li>I = <code>..</code> = 2 puntos + 1 de separación = 3 puntos</li>
+<li>O = <code>---</code> = 9 puntos + 2 de separación = 11 puntos</li>
+<li>Además, contamos 3 puntos de separación entre cada letra: Y-A, N-A, A-C, C-I e I-O (15 en total)</li>
+<li>Suma total = 73 puntos</li>
+</ul>
+<p>Comenzaremos almacenando en un diccionario o tabla <em>hash</em> la codificación de cada símbolo en su cadena Morse equivalente. Esto lo haremos con la siguiente función:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">static</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Character</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">crearMapaMorse</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Character</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tabla</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;A&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.-&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;B&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-...&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;C&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-.-.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;D&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-..&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;E&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;F&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;..-.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;G&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;--.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;H&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;....&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;I&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;..&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;J&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.---&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;K&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-.-&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;L&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.-..&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;M&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;--&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;N&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;O&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;---&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;P&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.--.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;Q&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;--.-&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;R&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.-.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;S&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;...&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;T&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;U&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;..-&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;V&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;...-&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;W&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.--&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;X&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-..-&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;Y&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-.--&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;Z&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;--..&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;!&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-.-.--&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabla</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="sc">&#39;?&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;..--..&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">tabla</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>En nuestro programa principal leeremos primero el número de casos de prueba, y luego leemos el texto de cada caso y vamos analizando símbolo a símbolo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Character</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tabla</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">crearMapaMorse</span><span class="p">();</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">linea</span><span class="p">;</span><span class="w">        </span>
+<span class="w">    </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Leemos los casos y el salto de línea que hay después</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">casos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="w">    </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">casos</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Leemos cada caso</span>
+<span class="w">        </span><span class="n">linea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// Procesamos cada símbolo del texto leído</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">linea</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">linea</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// Obtenemos la representación Morse de la letra</span>
+<span class="w">                </span><span class="n">String</span><span class="w"> </span><span class="n">representacion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tabla</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">linea</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<span class="w">                </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">representacion</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">if</span><span class="p">(</span><span class="n">representacion</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;.&#39;</span><span class="p">)</span>
+<span class="w">                        </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">                    </span><span class="k">else</span>
+<span class="w">                        </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="c1">// Un punto entre cada símbolo</span>
+<span class="w">                </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">representacion</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">linea</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="c1">// 3 puntos entre cada letra</span>
+<span class="w">                    </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span><span class="w">                </span>
+<span class="w">            </span><span class="k">else</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// 5 puntos entre cada palabra</span>
+<span class="w">                </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span><span class="w">            </span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">total</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="22-ninots-indultados">2.2. Ninots indultados<a class="headerlink" href="#22-ninots-indultados" title="Permanent link">&para;</a></h3>
+<p>En <a href="https://aceptaelreto.com/problem/statement.php?id=765" target="_blank">este reto</a> de <em>Acepta el Reto</em> debemos determinar qué ninots son indultados en las fallas de Valencia. Cada caso de prueba vendrá dado por un número <em>n</em> de votaciones de ninots, y luego seguirán <em>n</em> palabras (dispuestas en varias líneas, y separadas por espacios) con los nombres de los ninots votados (en mayúsculas si son de fallas adultas, en minúsculas si son infantiles). Debemos indicar en una línea, y separados por espacios, los nombres de los ninots infantil y adulto que han recibido más votos. </p>
+<p>Por ejemplo, para este caso de prueba:</p>
+<div class="highlight"><pre><span></span><code>5
+condealtea GUANYARDINES
+antigadecampanar QUARTEXTRAMURS GUANYARDINES
+</code></pre></div>
+<p>Deberemos indicar que en el caso de las fallas infantiles hay "empate", y en el de las adultas se indulta a GUANYARDINES:</p>
+<div class="highlight"><pre><span></span><code>empate GUANYARDINES
+</code></pre></div>
+<p>Aquí van algunas PISTAS:</p>
+<ul>
+<li>Para leer cada palabra por separado de las siguientes puede usar el método <code>next()</code> de <code>Scanner</code> (<code>sc.next()</code>), ue va procesando cada <em>token</em> o palabra clave que encuentra.</li>
+<li>Puedes crear un diccionario o mapa para guardarte las ocurrencias de las fallas infantiles y otra para las adultas (o un solo diccionario para todas). Cada vez que leas una palabra, miras si está en el diccionario: si no está la añades con contador 1, y si está le incrementas el contador. Deberás crear para ello un diccionario cuyas claves sean <em>Strings</em> (nombres de las fallas) y cuyos valores sean enteros (<code>Integer</code> en Java).</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="04a.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Introducción">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Introducción
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+
+  
+
+
+<h4>Consentimiento de cookies</h4>
+<p>Este sitio web utiliza cookies para ofrecerte una mejor experiencia.  Al hacer clic en "Aceptar", aceptas el uso de cookies.  También puedes configurar tus preferencias de cookies si lo prefieres.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Aceptar</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Gestionar cookies</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "navigation.top", "navigation.tracking", "navigation.footer", "navigation.indexes", "content.code.annotate", "announce.dismiss", "toc.follow", "content.code.copy"], "search": "assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>
