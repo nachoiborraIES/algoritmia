@@ -50,6 +50,7 @@ LISTADO DE RETOS POR CATEGORIA O NIVEL
 (C) Acepta el Reto: 635 - Cinquecento (https://aceptaelreto.com/problem/statement.php?id=635)
 (C) Acepta el Reto: 638 - Familia numerosa (https://aceptaelreto.com/problem/statement.php?id=638)
 (C) Acepta el Reto: 710 - Plazas disponibles en el mundial (https://aceptaelreto.com/problem/statement.php?id=710)
+(C) Acepta el Reto: 764 - Anillamiento en la albufera (https://aceptaelreto.com/problem/statement.php?id=764)
 (+) Kattis: FYI (https://open.kattis.com/problems/fyi)
 (*) Kattis: Building pyramids (https://open.kattis.com/problems/pyramids)
 (C) Kattis: Tarifa (https://open.kattis.com/problems/tarifa)
@@ -67,7 +68,7 @@ LISTADO DE RETOS POR CATEGORIA O NIVEL
 (+) Acepta el Reto: 158 - Los saltos de Mario (https://aceptaelreto.com/problem/statement.php?id=158)
 (*) Acepta el Reto: 664 - Gálibo (https://aceptaelreto.com/problem/statement.php?id=664)
 (+) Acepta el Reto: 150 - ¡A dibujar hexágonos! (https://aceptaelreto.com/problem/statement.php?id=150)
-(P) Acepta el Reto: 162 - Tableros de ajedrez (https://aceptaelreto.com/problem/statement.php?id=162)
+(C) Acepta el Reto: 162 - Tableros de ajedrez (https://aceptaelreto.com/problem/statement.php?id=162)
 (*) Acepta el Reto: 622 - La media prometida (https://aceptaelreto.com/problem/statement.php?id=622)
 (P) Acepta el Reto: 472 - Caminando voy (https://aceptaelreto.com/problem/statement.php?id=472)
 ( ) Acepta el Reto: 411 - Sobre la tela de una araña (https://aceptaelreto.com/problem/statement.php?id=411)
@@ -125,6 +126,7 @@ Específicos de textos:
 (C) Acepta el Reto: 616 - Pic, poc, pic... pong! (https://aceptaelreto.com/problem/statement.php?id=616)
 (C) Acepta el Reto: 617 - Mensajes en Space Invaders (https://aceptaelreto.com/problem/statement.php?id=617)
 (C) Acepta el Reto: 711 - Verificación de las entradas (https://aceptaelreto.com/problem/statement.php?id=711)
+(C) Acepta el Reto: 734 - Noches de 12 horas (https://aceptaelreto.com/problem/statement.php?id=734)
 (P) Kattis: Poker hand (https://open.kattis.com/problems/pokerhand)
 ( ) Kattis: Speed limit (https://open.kattis.com/problems/speedlimit)
 (+) Kattis: Simon says (https://open.kattis.com/problems/simonsays)
@@ -170,6 +172,7 @@ Listas:
 (+) Acepta el Reto: 366 - Los niños buenos (https://aceptaelreto.com/problem/statement.php?id=366)
 ( ) Acepta el Reto: 109 - Liga de pádel (https://aceptaelreto.com/problem/statement.php?id=109)
 (C) Acepta el Reto: 477 - A la captura del Doctor Muerte (https://aceptaelreto.com/problem/statement.php?id=477)
+(C) Acepta el Reto: 766 - Repartiendo horchata (https://aceptaelreto.com/problem/statement.php?id=766)
 
 Diccionarios:
 ( ) Acepta el Reto: 106 - Códigos de barras (https://aceptaelreto.com/problem/statement.php?id=106)
@@ -186,7 +189,7 @@ Conjuntos:
 
 (+) Acepta el Reto: 283 - Invirtiendo en Jaén (https://www.aceptaelreto.com/problem/statement.php?id=283)
 (*) Acepta el Reto: 769 - Los jardines de la Alhambra (https://aceptaelreto.com/problem/statement.php?id=769)
-( ) Acepta el Reto: 479 - El hombre sin miedo y sin radar (https://aceptaelreto.com/problem/statement.php?id=479)
+(C) Acepta el Reto: 479 - El hombre sin miedo y sin radar (https://aceptaelreto.com/problem/statement.php?id=479)
 ( ) Acepta el Reto: 244 - Reinas atacadas (https://aceptaelreto.com/problem/statement.php?id=244)
 ( ) Acepta el Reto: 432 - Escapando de las fuerzas imperiales (https://aceptaelreto.com/problem/statement.php?id=432)
 ( ) Acepta el Reto: 491 - Planificando las uvas (https://aceptaelreto.com/problem/statement.php?id=491)
