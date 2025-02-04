@@ -14,6 +14,8 @@
         <link rel="prev" href="04a.html">
       
       
+        <link rel="next" href="04c.html">
+      
       
       <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
@@ -732,6 +734,8 @@
       
         
       
+        
+      
     
     
     
@@ -881,10 +885,55 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-uso-de-conjuntos-podemos-empezar" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Uso de conjuntos: ¿Podemos empezar?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Uso de conjuntos: ¿Podemos empezar?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-michael-j-fox-y-el-pato-donald" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Michael J. Fox y el Pato Donald
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04c.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmos recursivos
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -961,6 +1010,30 @@
   <a href="#22-ninots-indultados" class="md-nav__link">
     <span class="md-ellipsis">
       2.2. Ninots indultados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-uso-de-conjuntos-podemos-empezar" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Uso de conjuntos: ¿Podemos empezar?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Uso de conjuntos: ¿Podemos empezar?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-michael-j-fox-y-el-pato-donald" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Michael J. Fox y el Pato Donald
     </span>
   </a>
   
@@ -1225,9 +1298,89 @@ antigadecampanar QUARTEXTRAMURS GUANYARDINES
 </code></pre></div>
 <p>Aquí van algunas PISTAS:</p>
 <ul>
-<li>Para leer cada palabra por separado de las siguientes puede usar el método <code>next()</code> de <code>Scanner</code> (<code>sc.next()</code>), ue va procesando cada <em>token</em> o palabra clave que encuentra.</li>
+<li>Para leer cada palabra por separado de las siguientes puede usar el método <code>next()</code> de <code>Scanner</code> (<code>sc.next()</code>), que va procesando cada <em>token</em> o palabra clave que encuentra. Es conveniente que la enlaces con una operación <code>trim</code> para eliminar espacios que puedan quedar a ambos lados: <code>sc.next().trim()</code>.</li>
 <li>Puedes crear un diccionario o mapa para guardarte las ocurrencias de las fallas infantiles y otra para las adultas (o un solo diccionario para todas). Cada vez que leas una palabra, miras si está en el diccionario: si no está la añades con contador 1, y si está le incrementas el contador. Deberás crear para ello un diccionario cuyas claves sean <em>Strings</em> (nombres de las fallas) y cuyos valores sean enteros (<code>Integer</code> en Java).</li>
 </ul>
+<div class="admonition quote">
+<p class="admonition-title">Ejercicio 2</p>
+<p>Trata de resolver este reto en Java y comprueba que la plataforma lo acepta.</p>
+</div>
+<h2 id="3-uso-de-conjuntos-podemos-empezar">3. Uso de conjuntos: ¿Podemos empezar?<a class="headerlink" href="#3-uso-de-conjuntos-podemos-empezar" title="Permanent link">&para;</a></h2>
+<p>En <a href="https://aceptaelreto.com/problem/statement.php?id=521" target="_blank">este reto</a> de <em>Acepta el Reto</em> debemos decidir si puede empezar o no una reunión de vecinos. Para ello, en cada caso de prueba nos darán dos líneas:</p>
+<ul>
+<li>En la primera nos dan tres números indicando cuántos pisos hay en la urbanización (<em>p</em>), cuántas letras o puertas hay en cada piso (<em>l</em>) y cuántos asistentes han venido a la reunión (<em>a</em>).</li>
+<li>En la segunda línea nos dan, separados por espacios, el piso y la letra donde vive cada vecino. Puede haber más de un vecino que viva en el mismo piso y letra y hayan venido juntos a la reunión</li>
+</ul>
+<p>Deberemos mostrar el mensaje "EMPEZAMOS" si al menos hay vecinos de la mitad de viviendas, o "ESPERAMOS" si aún no. En el caso de que el total de viviendas sea impar, se considerará la mitad por exceso.</p>
+<p>Por ejemplo, dado este caso de prueba:</p>
+<div class="highlight"><pre><span></span><code>4 1 3
+1 A 2 A 1 A
+</code></pre></div>
+<p>La casa tiene 4 plantas, con una letra por planta, y han venido 3 vecinos que son dos del 1ºA y otro del 2ºA. En total se han cubierto 2 de las 4 viviendas del edificio, con lo que podemos empezar la reunión.</p>
+<p>Para resolver el reto haremos lo siguiente:</p>
+<ul>
+<li>Calcularemos cuántas viviendas totales hay en el edificio. Esto se consigue multiplicando los dos primeros datos que nos dan: el número de pisos <em>p</em> por el total de letras en cada piso <em>l</em>.</li>
+<li>Almacenamos en un conjunto las distintas viviendas que vienen a la reunión, de forma que descartamos las viviendas repetidas. Si el tamaño del conjunto es al menos la mitad del total, podremos empezar (considerando también el caso de que haya un número impar de viviendas)</li>
+</ul>
+<p>Aquí tenemos una posible solución en Java:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.*</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PodemosEmpezar</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+<span class="w">        </span><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">viviendas</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">pisos</span><span class="p">,</span><span class="w"> </span><span class="n">letras</span><span class="p">,</span><span class="w"> </span><span class="n">asistentes</span><span class="p">,</span><span class="w"> </span><span class="n">totalViviendas</span><span class="p">,</span><span class="w"> </span><span class="n">mitad</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">do</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">pisos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="w">            </span><span class="n">letras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="w">            </span><span class="n">asistentes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pisos</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// Calculamos el total de viviendas</span>
+<span class="w">                </span><span class="n">totalViviendas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pisos</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">letras</span><span class="p">;</span>
+
+<span class="w">                </span><span class="n">viviendas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">                </span><span class="c1">// Añadimos en el conjunto el número de piso seguido de la letra</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">asistentes</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">++</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">String</span><span class="w"> </span><span class="n">piso</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<span class="w">                    </span><span class="n">String</span><span class="w"> </span><span class="n">letra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<span class="w">                    </span><span class="n">viviendas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">piso</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">letra</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+
+<span class="w">                </span><span class="c1">// Calculamos la mitad de asistentes necesaria</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">totalViviendas</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                    </span><span class="n">mitad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">totalViviendas</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">                </span><span class="k">else</span>
+<span class="w">                    </span><span class="n">mitad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">totalViviendas</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">viviendas</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">mitad</span><span class="p">)</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;EMPEZAMOS&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="k">else</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ESPERAMOS&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">pisos</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>En esta ocasión también empleamos <code>sc.next()</code> para ir leyendo los pisos y letras de los asistentes a la reunión, de forma consecutiva.</p>
+<h3 id="31-michael-j-fox-y-el-pato-donald">3.1. Michael J. Fox y el Pato Donald<a class="headerlink" href="#31-michael-j-fox-y-el-pato-donald" title="Permanent link">&para;</a></h3>
+<p>En <a href="https://aceptaelreto.com/problem/statement.php?id=416" target="_blank">este reto</a> de <em>Acepta el Reto</em> tenemos que distinguir si hay cumpleaños repetidos en una secuencia de fechas. Nos darán para cada caso de prueba el número de fechas que tenemos que procesar, y luego una secuencia de fechas, separadas por espacios. Tenemos que indicar si hay cumpleaños repetidos (SI) o todos son distintos (NO).</p>
+<p>Por ejemplo, para este caso de prueba:</p>
+<div class="highlight"><pre><span></span><code>5
+9/6/1961 22/10/1938 31/5/1961 20/4/1964 9/6/1934
+</code></pre></div>
+<p>Vemos que el cumpleaños el 9/6 se repite dos veces, por lo que diremos que SI.</p>
+<div class="admonition quote">
+<p class="admonition-title">Ejercicio 3</p>
+<p>Trata de resolver este reto en Java y comprueba que la plataforma lo acepta.</p>
+</div>
 
 
 
@@ -1278,6 +1431,22 @@ antigadecampanar QUARTEXTRAMURS GUANYARDINES
             </div>
           </a>
         
+        
+          
+          <a href="04c.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Algoritmos recursivos">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Algoritmos recursivos
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
